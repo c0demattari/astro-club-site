@@ -1,15 +1,18 @@
 ---
+import Block from "../components/Block.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Content as General } from "../components/General.md";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Block title="C0deについて">
+    私たちC0de部はプログラミングを中心に工学部として必要なスキルを身に着けてゆくことを目的の中心に活動しています。
+    スマホアプリ開発、ウェブアプリ開発などそれぞれが得意な分野の知識・ノウハウを生かした活動を行っています。
+  </Block>
+  <General />
+  <Block title="学生向け">
+    毎月第2水曜日の16:30から1時間ほどの部会を開きます。
+    すべての部員は何らかのプロジェクトに参加し、部会でプロジェクトの進捗報告を行います。
+    作りたいものがある方、大学生からプログラミングをしてみたい初心者の方も歓迎です。
+  </Block>
+</BaseLayout>

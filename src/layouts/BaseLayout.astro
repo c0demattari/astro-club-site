@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import "../styles/reset.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <!-- type リンクされようとしているリソースのMIMEタイプ -->
+    <link rel="icon" type="image/svg+xml" href="/C0de-icon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=M+PLUS+1&display=swap"
+      rel="stylesheet"
+    />
+    <title>名古屋工業大学C0de</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
