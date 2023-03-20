@@ -1,0 +1,29 @@
+---
+import Headline from "@features/ui/Headline/Headline.astro";
+const title: string = "Twitter";
+---
+
+<div id={title} class="section">
+  <Headline headline={title} iconName="Twitter" />
+  <div class="embed">
+    <a
+      class="twitter-timeline"
+      href="https://twitter.com/c0demattari?ref_src=twsrc%5Etfw"
+      data-chrome="noheader"
+    >
+      Tweets by c0demattari
+    </a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+    ></script>
+  </div>
+
+  <style>
+    .embed {
+      height: 50vh;
+      overflow-y: scroll;
+      width: 80%;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+  </style>
+</div>

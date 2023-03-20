@@ -1,0 +1,79 @@
+---
+import Hamburger from "./Hamburger/Hamburger.astro";
+---
+
+<nav>
+  <!-- 悩み：文字が入りきらないときにハンバーガーメニューを表示させたいんだけどそうなるとHamburgerコンポーネントにクラスをわたしたくなる... -->
+  <div class="hamburger-container">
+    <Hamburger />
+  </div>
+  <ul role="list" class="nav-links">
+    <li>
+      <a href="#C0deについて">C0deについて</a>
+    </li>
+    <li>
+      <a href="#活動内容">活動内容</a>
+    </li>
+    <li>
+      <a href="#FAQ">FAQ</a>
+    </li>
+    <li>
+      <a href="#アクセス">アクセス</a>
+    </li>
+    <li>
+      <a href="#お問い合わせ">お問い合わせ</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    container-type: inline-size;
+    flex-grow: 1;
+  }
+  .nav-links {
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav-links li {
+    display: inline-block;
+  }
+  .nav-links a {
+    color: #333333;
+    padding: 0 0.5rem;
+    display: inline-block;
+    line-height: 44px;
+    border-bottom: 1px solid transparent;
+  }
+  a:hover {
+    border-bottom: 1px solid #f8db77;
+  }
+  .hamburger-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  @container (width >= 600px) {
+    .hamburger-container {
+      display: none;
+      color: blue;
+    }
+  }
+
+  @container (width < 600px) {
+    .nav-links {
+      display: none;
+    }
+
+    .nav-links.expanded {
+      display: block;
+    }
+    .nav-links.expanded li {
+      display: block;
+    }
+    .nav-links.expanded a {
+      display: block;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+import Accordion from "@features/ui/Accordion/Accordion.astro";
+import Headline from "@features/ui/Headline/Headline.astro";
+
+const title: string = "活動内容";
+---
+
+<div id={title} class="section">
+  <Headline headline={title} iconName="Content" />
+  <p>
+    毎月第2水曜日の16:30から1時間ほどの部会を開きます。
+    すべての部員は何らかのプロジェクトに参加し、部会でプロジェクトの進捗報告を行います。
+    作りたいものがある方、大学生からプログラミングをしてみたい初心者の方も歓迎です。
+  </p>
+  <Accordion summary="詳細">テキスト</Accordion>
+</div>

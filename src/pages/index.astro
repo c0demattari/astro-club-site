@@ -1,18 +1,36 @@
 ---
-import Block from "../components/Block.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { Content as General } from "../components/General.md";
+import AboutC0de from "@features/AboutC0de/AboutC0de.astro";
+import Access from "@features/Access/Access.astro";
+import Contact from "@features/Contact/Contact.astro";
+import Content from "@features/Content/Content.astro";
+import FAQ from "@features/FAQ/FAQ.astro";
+import TitleAnimation from "@features/TitleAnimation/TitleAnimation.astro";
+import Twitter from "@features/Twitter/Twitter.astro";
+import C0deImage from "@features/ui/C0deImage.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <Block title="C0deについて">
-    私たちC0de部はプログラミングを中心に工学部として必要なスキルを身に着けてゆくことを目的の中心に活動しています。
-    スマホアプリ開発、ウェブアプリ開発などそれぞれが得意な分野の知識・ノウハウを生かした活動を行っています。
-  </Block>
-  <General />
-  <Block title="学生向け">
-    毎月第2水曜日の16:30から1時間ほどの部会を開きます。
-    すべての部員は何らかのプロジェクトに参加し、部会でプロジェクトの進捗報告を行います。
-    作りたいものがある方、大学生からプログラミングをしてみたい初心者の方も歓迎です。
-  </Block>
+  <main>
+    <TitleAnimation />
+    <C0deImage height={200} width={200} />
+    <AboutC0de />
+    <Content />
+    <FAQ />
+    <Access />
+    <Twitter />
+    <Contact />
+  </main>
 </BaseLayout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin: 96px auto;
+    padding: 0 16px 20vh;
+    max-width: 800px;
+  }
+</style>

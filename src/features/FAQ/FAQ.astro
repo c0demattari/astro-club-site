@@ -1,0 +1,27 @@
+---
+import Accordion from "@features/ui/Accordion/Accordion.astro";
+import Headline from "@features/ui/Headline/Headline.astro";
+const title: string = "FAQ";
+---
+
+<div id={title} class="section">
+  <Headline headline={title} iconName="Faq" />
+  <Accordion summary="4年生は入部できますか">
+    <p>テキスト</p>
+  </Accordion>
+  <Accordion summary="お問い合わせはどこからすればいいですか">
+    <p>テキスト</p>
+  </Accordion>
+  <Accordion summary="部費はありますか">
+    <p>テキスト</p>
+  </Accordion>
+  <Accordion summary="普段どこで活動しますか">
+    <p>テキスト</p>
+  </Accordion>
+  <Accordion summary="1週間に何時間くらい活動しますか">
+    <p>テキスト</p>
+  </Accordion>
+  <Accordion summary="運動部とも併部できますか">
+    <p>テキスト</p>
+  </Accordion>
+</div>
