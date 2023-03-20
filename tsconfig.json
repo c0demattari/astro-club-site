@@ -5,7 +5,8 @@
     "paths": {
       "@features/*": ["src/features/*"],
       "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@/*": ["src/*"]
     },
     "incremental": true
   }
