@@ -1,0 +1,47 @@
+---
+import Icon from "../Icon/Icon.astro";
+/**
+ *  本当は下のようにやりたかったがコンポーネントの型を取得できないため妥協
+ * type Props = React.ComponentProps<typeof Icon>;
+ */
+import type { icon } from "../Icon/Icon.astro";
+type Props = icon & {
+  headline: string;
+};
+const { iconName, headline } = Astro.props;
+---
+
+<div class="headline">
+  <Icon iconName={iconName} />
+  <h2>{headline}</h2>
+</div>
+
+<style>
+  .headline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    font-size: 1.5rem;
+  }
+
+  .headline > h2 {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .headline::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 8px;
+    z-index: -1;
+
+    background: linear-gradient(
+      90deg,
+      rgba(248, 219, 119, 1) 0%,
+      rgba(226, 130, 53, 0.10406169303658963) 100%
+    );
+  }
+</style>

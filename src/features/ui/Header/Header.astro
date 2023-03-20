@@ -1,0 +1,38 @@
+---
+import C0deImage from "../C0deImage.astro";
+import Navigation from "./Navigation/Navigation.astro";
+---
+
+<header>
+  <a href="#top" class="icon">
+    <C0deImage width={44} height={44} />
+  </a>
+  <Navigation />
+</header>
+
+<style>
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 800px;
+    /* padding: 0 16px; */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1;
+  }
+
+  .icon {
+    display: flex;
+  }
+
+  ul[role="list"] {
+    padding-left: 0;
+    text-align: right;
+  }
+</style>
