@@ -26,8 +26,12 @@ import Footer from "@features/ui/Footer.astro";
     <Footer />
     <script>
       const hamburger = document.querySelector<HTMLElement>(".hamburger");
-      hamburger?.addEventListener("click", (event) => {
-        document.querySelector(".nav-links")?.classList.toggle("expanded");
+      const navLinks = document.querySelector<HTMLElement>(".nav-links");
+      hamburger?.addEventListener("click", () => {
+        navLinks?.classList.toggle("expanded");
+      });
+      navLinks?.addEventListener("click", () => {
+        navLinks?.classList.toggle("expanded");
       });
     </script>
   </body>

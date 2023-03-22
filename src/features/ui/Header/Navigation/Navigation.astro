@@ -3,77 +3,100 @@ import Hamburger from "./Hamburger/Hamburger.astro";
 ---
 
 <nav>
-  <!-- 悩み：文字が入りきらないときにハンバーガーメニューを表示させたいんだけどそうなるとHamburgerコンポーネントにクラスをわたしたくなる... -->
-  <div class="hamburger-container">
+  <span class="hamburger-container">
     <Hamburger />
-  </div>
+  </span>
   <ul role="list" class="nav-links">
-    <li>
-      <a href="#C0deについて">C0deについて</a>
-    </li>
-    <li>
-      <a href="#活動内容">活動内容</a>
-    </li>
-    <li>
-      <a href="#FAQ">FAQ</a>
-    </li>
-    <li>
-      <a href="#アクセス">アクセス</a>
-    </li>
-    <li>
-      <a href="#お問い合わせ">お問い合わせ</a>
-    </li>
+    <li><a href="#C0deについて">C0deについて</a></li>
+    <li><a href="#活動内容">活動内容</a></li>
+    <li><a href="#FAQ">FAQ</a></li>
+    <li><a href="#アクセス">アクセス</a></li>
+    <li><a href="#お問い合わせ">お問い合わせ</a></li>
   </ul>
 </nav>
 
 <style>
   nav {
-    container-type: inline-size;
-    flex-grow: 1;
+    display: inline-block;
   }
+
+  .hamburger-container {
+    position: absolute;
+    top: 0;
+    right: 16px;
+  }
+
   .nav-links {
+    position: absolute;
     padding-left: 0;
-    display: flex;
-    justify-content: flex-end;
   }
+
   .nav-links li {
     display: inline-block;
+    background-color: #f5f5f5;
+    text-align: center;
+    min-width: 80px;
+    transition: transform 0.1s ease-out;
   }
+
   .nav-links a {
-    color: #333333;
-    padding: 0 0.5rem;
     display: inline-block;
+    width: 100%;
+    padding: 0 0.5rem;
+    color: #333333;
     line-height: 44px;
-    border-bottom: 1px solid transparent;
   }
-  a:hover {
-    border-bottom: 1px solid #f8db77;
+
+  .nav-links li:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-out;
   }
-  .hamburger-container {
-    display: flex;
-    justify-content: flex-end;
+
+  .nav-links li {
+    position: relative;
   }
-  @container (width >= 600px) {
+
+  .nav-links li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-links li:hover::before {
+    width: 100%;
+    transition: width 0.5s ease-in-out;
+    border-bottom: 1px solid var(--yellow);
+  }
+
+  @media screen and (max-width: 599px) {
+    .nav-links {
+      top: -100vh;
+      z-index: -1;
+    }
+    .nav-links.expanded {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      top: 44px;
+      transition: top 0.5s;
+      left: 0;
+      background: rgba(245, 245, 245, 0.5);
+    }
+  }
+
+  @media screen and (min-width: 600px) {
     .hamburger-container {
       display: none;
-      color: blue;
     }
-  }
 
-  @container (width < 600px) {
     .nav-links {
-      display: none;
-    }
-
-    .nav-links.expanded {
-      display: block;
-    }
-    .nav-links.expanded li {
-      display: block;
-    }
-    .nav-links.expanded a {
-      display: block;
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      top: 0;
+      right: 0;
     }
   }
 </style>
