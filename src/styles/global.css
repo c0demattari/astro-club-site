@@ -1,3 +1,7 @@
+:root {
+  --yellow: #f8db77;
+  --orange: #e28235;
+}
 html {
   /* font-family: "Fira Code", monospace; */
   font-family: "M PLUS 1", sans-serif;
