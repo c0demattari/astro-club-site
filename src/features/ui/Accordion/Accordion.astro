@@ -99,19 +99,26 @@ const { summary } = Astro.props;
 <style>
   details {
     border: 1px solid #e28235;
+    -webkit-filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     border-radius: 7px;
     background-color: #f5f5f5;
     overflow: hidden;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
   summary {
     font-size: 16px;
     cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding-left: 2ch;
     gap: 1ch;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
     transition: background-color 0.3s ease-out;
   }
   summary::before {
@@ -119,12 +126,22 @@ const { summary } = Astro.props;
     color: #e28235;
     display: inline-block;
     font-size: 0.5rem;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   }
 
   details.expanded > summary::before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   }
 
   summary,
@@ -134,6 +151,8 @@ const { summary } = Astro.props;
 
   details[open] > summary {
     background-color: #e5e5e5;
+    -webkit-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
     transition: background-color 0.3s ease-out;
   }
 
