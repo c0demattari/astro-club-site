@@ -5,4 +5,20 @@ const title: string = "アクセス";
 
 <div id={title} class="section">
   <Headline headline={title} iconName="Location" />
+  本拠地：名古屋工業大学55号館2階第1共用室
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203.86834501015204!2d136.9233661517501!3d35.15927621710147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037095dcf649f9%3A0x249357c4dc88f356!2sFacilities%20for%20Extra-Curricular%20Activities%2C%201-ch%C5%8Dme-7%20Fukiage%2C%20Chikusa%20Ward%2C%20Nagoya%2C%20Aichi%20464-0856!5e0!3m2!1sen!2sjp!4v1679554977975!5m2!1sen!2sjp"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+
+<style>
+  iframe {
+    height: 50vh;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid var(--yellow);
+    border-radius: 15px;
+  }
+</style>
