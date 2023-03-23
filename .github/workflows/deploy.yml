@@ -25,6 +25,7 @@ jobs:
 
       - name: generate built one
         run: |-
+          npm install
           npm run build
 
       - name: push to the repo
