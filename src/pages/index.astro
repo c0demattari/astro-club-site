@@ -6,14 +6,18 @@ import Content from "@features/Content/Content.astro";
 import FAQ from "@features/FAQ/FAQ.astro";
 import TitleAnimation from "@features/TitleAnimation/TitleAnimation.astro";
 import Twitter from "@features/Twitter/Twitter.astro";
-import C0deImage from "@features/ui/C0deImage.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
   <main>
     <TitleAnimation />
-    <C0deImage height={200} width={200} />
+    <img
+      src={`${import.meta.env.BASE_URL}/C0de-icon.svg`}
+      alt="C0deのアイコン"
+      width="300px"
+      height="300px"
+    />
     <AboutC0de />
     <Content />
     <FAQ />
