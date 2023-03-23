@@ -10,23 +10,21 @@ on:
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
-      - name: generate built one
+      - name: generate
         run: |-
+          ls
           npm install
           npm run build
+          ls
 
       - name: push to the repo
         run: |-
