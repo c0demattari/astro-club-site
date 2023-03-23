@@ -1,21 +1,33 @@
----
----
-
 <footer>
-  <ul role="list">
-    <li>
-      <a>C0de公式Twitter</a>
-    </li>
-    <li>
-      <a>Github</a>
-    </li>
-    <li>
-      <a>名古屋工業大学</a>
-    </li>
-    <li>
-      <a> 情報基盤センター</a>
-    </li>
-  </ul>
+  <div>
+    <ul role="list">
+      <li>
+        <a href="https://twitter.com/c0demattari">
+          <img
+            src={`${import.meta.env.BASE_URL}Twitter.svg`}
+            alt="Twitter icon"
+            width="20px"
+            height="auto"
+          />
+          C0deのTwitter</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/c0demattari">
+          <img
+            src={`${import.meta.env.BASE_URL}Github-mark.svg`}
+            alt="Github icon"
+            width="16px"
+            height="auto"
+          />
+          Github
+        </a>
+      </li>
+      <li>
+        <a href="https://www.nitech.ac.jp/">名古屋工業大学</a>
+      </li>
+    </ul>
+  </div>
 </footer>
 
 <style>
@@ -25,11 +37,18 @@
     padding: 16px 32px 48px;
     font-size: 0.8rem;
   }
+  img {
+    display: inline;
+  }
+  div {
+    margin: 0 auto;
+    max-width: 800px;
+  }
   ul {
     padding: 0;
   }
   footer li {
     display: inline-block;
-    padding-left: 3ch;
+    padding-right: 3ch;
   }
 </style>
