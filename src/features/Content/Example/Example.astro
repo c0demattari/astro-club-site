@@ -1,0 +1,46 @@
+---
+import Accordion from "@features/ui/Accordion/Accordion.astro";
+import Headline from "@features/ui/Headline/Headline.astro";
+---
+
+<div>
+  <Headline headline="過去の活動例" iconName="Works" />
+  <Accordion summary="工大祭アプリ">
+    <figure>
+      <figcaption>2022年度工大祭用に作成した予約兼便利アプリ</figcaption>
+      <img
+        src={`${import.meta.env.BASE_URL}mobile-phone.png`}
+        alt="工大祭アプリ"
+        width="100%"
+      />
+    </figure>
+    <p>
+      去年は弊大学の工大祭実行員会と協力してiOS、Androidアプリを開発しました。
+      大学祭参加に予約が必要だったため、アプリから予約、さらに企画の地図やステージ企画のタイムテーブルなどを実装しました。
+      受付処理には管理者用のウェブアプリケーションを実装し、そこから来訪者に配られるQRコードを読み込むことで入場処理を行いました。
+    </p>
+    <figure>
+      <img
+        src={`${import.meta.env.BASE_URL}koudaisai_information.jpg`}
+        alt="工大祭アプリ 実例"
+        width="100%"
+        height="400px"
+      />
+      <figcaption>
+        2022年度工大祭で工大祭アプリを用いて来訪者の受付処理をしているところ
+      </figcaption>
+    </figure>
+  </Accordion>
+</div>
+
+<style>
+  img {
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  figcaption {
+    text-align: right;
+    font-size: 0.8em;
+  }
+</style>
