@@ -18,6 +18,7 @@ const { summary } = Astro.props;
 <style>
   details {
     border: 1px solid #e28235;
+    -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
@@ -41,27 +42,65 @@ const { summary } = Astro.props;
     -o-transition: background-color 0.3s ease-out;
     transition: background-color 0.3s ease-out;
   }
+  summary::-webkit-details-marker {
+    display: none;
+  }
   summary::before {
     content: "▶";
     color: #e28235;
     display: inline-block;
     font-size: 0.5rem;
-    -webkit-transition: -webkit-transform 0.3s ease-in-out;
-    transition: -webkit-transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -webkit-animation: 0.4s icon-closing-animation forwards;
+    animation: 0.4s icon-closing-animation forwards;
+  }
+
+  @-webkit-keyframes icon-closing-animation {
+    from {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes icon-closing-animation {
+    from {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+
+  @-webkit-keyframes icon-opening-animation {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes icon-opening-animation {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
   }
 
   details[open] > summary::before {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    -webkit-transition: -webkit-transform 0.3s ease-in-out;
-    transition: -webkit-transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -webkit-animation: 0.4s icon-opening-animation forwards;
+    animation: 0.4s icon-opening-animation forwards;
   }
 
   summary,
