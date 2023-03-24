@@ -1,5 +1,4 @@
 ---
-import Accordion from "@features/ui/Accordion/Accordion.astro";
 import Headline from "@features/ui/Headline/Headline.astro";
 import Example from "./Example/Example.astro";
 
@@ -8,15 +7,25 @@ const title: string = "活動内容";
 
 <div id={title} class="section">
   <Headline headline={title} iconName="Content" />
+  <ol>
+    <li>毎月第2水曜日16:30からの1時間ほどの部会</li>
+    <li>各プロジェクト</li>
+    <li>部内の交流</li>
+  </ol>
   <p>
-    毎月第2水曜日の16:30から1時間ほどの部会を開きます。
+    1. 毎月第2水曜日の16:30から1時間ほどの部会を開きます。
     すべての部員は何らかのプロジェクトに参加し、部会でプロジェクトの進捗報告を行います。
-    作りたいものがある方、大学生からプログラミングをしてみたい初心者の方も歓迎です。
   </p>
-  <Accordion summary="プロジェクトとは">
-    プロジェクトとは作りたいもの・達成したい目標のことです。
+  <p>
+    2. プロジェクトとは作りたいもの・達成したい目標のことです。
     例えば新しいサービスを作りたいとき、それを達成するために計画を立案し、チームを作って開発をします。
+    部員は成果物を12月の部会までに発表することが義務付けられています。
     プロジェクトの内容はすべて個人に委ねているため、自由な活動をすることが可能です。
-  </Accordion>
+  </p>
+  <p>
+    3. 部内の連絡にはDiscordとSlackを用いています。
+    そのツール内で音声通話を通して活動することも多いです。
+    その他にも55号館2階にある部室を頼ったり、不定期で訪れる勉強会に参加することで仲を深めることが可能です。
+  </p>
   <Example />
 </div>
