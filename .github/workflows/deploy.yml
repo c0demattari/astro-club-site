@@ -1,7 +1,7 @@
 name: build astro site
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
+  # Trigger the workflow every time you push to the `deploy` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [deploy]
@@ -21,10 +21,8 @@ jobs:
 
       - name: generate
         run: |-
-          ls
           npm install
           npm run build
-          ls
 
       - name: push to the repo
         run: |-
@@ -32,4 +30,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "bot: auto generation"
-          git push
+          git push origin release
