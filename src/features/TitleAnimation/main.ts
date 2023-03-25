@@ -39,18 +39,29 @@ const displayedNames: string[] = [
   "名古屋工業大学\nプログラミング部",
 ];
 
-async function ClubNameAnimation(element: HTMLElement) {
-  async function updateContent(i: number): Promise<void> {
+const className: string = "animation";
+const animationTag = document.querySelector<HTMLElement>(`.${className}`);
+
+if (animationTag) {
+  ClubNameAnimation(animationTag, className);
+} else {
+  throw new Error(className + " class not found.");
+}
+
+async function ClubNameAnimation(element: HTMLElement, className: string) {
+  async function updateContent(i: number, time: number): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
         element.innerText = displayedNames[i];
         return resolve();
-      }, 70);
+      }, time);
     });
   }
+  const time: number = 70;
   for (let i = 0; i < displayedNames.length; i++) {
-    await updateContent(i);
+    await updateContent(i, time);
   }
+  element.classList.remove(className);
 }
 
-export { ClubNameAnimation };
+export {};

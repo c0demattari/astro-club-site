@@ -1,5 +1,9 @@
 <div class="wrapper">
-  <h1 class="animation-tag">名古屋工業大学<br />プログラミング部</h1>
+  <h1>
+    <span class="animation">
+      名古屋工業大学<br />プログラミング部
+    </span>
+  </h1>
 </div>
 
 <style>
@@ -13,17 +17,13 @@
     font-weight: normal;
     min-height: calc(1.5em * 2);
   }
+  .animation::after {
+    content: "|";
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+  }
 </style>
 <script>
-  import { ClubNameAnimation } from "./main";
-
-  const className: string = ".animation-tag";
-  const animationTag = document.querySelector<HTMLElement>(className);
-
-  if (animationTag) {
-    console.log(animationTag);
-    ClubNameAnimation(animationTag);
-  } else {
-    throw new Error(className + "をもったタグは存在しません");
-  }
+  import "./main";
 </script>
