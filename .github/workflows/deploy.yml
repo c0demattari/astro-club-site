@@ -30,4 +30,4 @@ jobs:
           git config user.email github-actions@github.com
           git add -f ./dist/*
           git commit -m "bot: auto generation"
-          git push origin release
+          git push origin deploy
