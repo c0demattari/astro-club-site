@@ -6,15 +6,15 @@ import Footer from "@features/ui/Footer/Footer.astro";
 ---
 
 <html lang="ja">
-  <head>
+  <head prefix="og:http://ogp.me/ns#">
     <meta charset="utf-8" />
-    <!-- type リンクされようとしているリソースのMIMEタイプ -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/astro-club-site/C0de-icon.svg"
-    />
+    <link rel="icon" type="image/svg+xml" href="/C0de-icon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="名古屋工業大学,名工大,c0de,プログラミング" />
+    <meta
+      name="description"
+      content="名古屋工業大学プログラミング部C0deのウェブサイトです。私たちc0deはプログラミングを中心に工学部として必要なスキルを身に着けてゆくことを目的の中心に活動しています。"
+    />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +22,20 @@ import Footer from "@features/ui/Footer/Footer.astro";
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=M+PLUS+1&display=swap"
       rel="stylesheet"
     />
-    <title>名古屋工業大学C0de</title>
+    <title>名工大プログラミング部C0de</title>
+    <meta property="og:url" content="https://c0de-web.club.nitech.ac.jp/" />
+    <meta property="og:title" content="名工大プログラミング部C0de" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="名古屋工業大学プログラミング部C0deのウェブサイトです。私たちc0deはプログラミングを中心に工学部として必要なスキルを身に着けてゆくことを目的の中心に活動しています。"
+    />
+    <meta
+      property="og:image"
+      content="https://c0de-web.club.nitech.ac.jp/C0de-icon.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@c0demattari" />
   </head>
   <body>
     <Header />
